@@ -43,9 +43,32 @@ Login.prototype.login = function(_name, _email) {
 Login.prototype.logout = function(sessionId) {
 	console.log('logout::' + sessionId);
    /*
-	* TODO: Remove the given sessionId from the sessionMap
+	* TODO: 
 	*/
+	
+delete this.sessionMap[sessionId];
+
+	 
 };
+
+Login.prototype.getName = function(sessionId) {
+	return this.sessionMap[sessionId].name;
+};
+
+
+
+Login.prototype.getemail = function(sessionId) {
+	return this.sessionMap[sessionId].email;
+};
+
+
+
+
+
+
+
+
+
 
 // Export the Login class
 module.exports = new Login();
